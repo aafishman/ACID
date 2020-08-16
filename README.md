@@ -8,4 +8,5 @@ List<Vector3> path = AStar.FindPath(tilemap, startPos, endPos);
 ```
 
 <img src="https://raw.githubusercontent.com/antonpantev/pathfinding/master/PreviewImages/ScreenShot.png">
-TestCommit! WHY ARE THERE NO CHANGES TO COMMIT? THIS IS A CHANGE>ll.;[sdkaklsdjql;asec]
+
+See notes.html in assets for some notes, more are in a few of the different scripts at the moment. 

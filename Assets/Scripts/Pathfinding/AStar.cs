@@ -57,7 +57,7 @@ namespace Toolbox
                 goal = ClosestCell(OpenCells(map, start, goal), start, goal);
             }
 
-            return AStar.FindPath(new MoveGraph(map), start, goal, Vector3Int.Distance);
+            return AStar.FindPath(new FourDirectionGraph(map), start, goal, Vector3Int.Distance);
         }
 
         static HashSet<Vector3Int> OpenCells(Tilemap map, Vector3Int start, Vector3Int goal)
@@ -131,7 +131,7 @@ namespace Toolbox
         /// </summary>
         public static List<Vector3Int> FindPath(Tilemap map, Vector3Int start, Vector3Int goal)
         {
-            return FindPath(new MoveGraph(map), start, goal, Vector3Int.Distance);
+            return FindPath(new FourDirectionGraph(map), start, goal, Vector3Int.Distance);
         }
 
         /// <summary>

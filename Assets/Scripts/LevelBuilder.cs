@@ -72,6 +72,7 @@ public class LevelBuilder : MonoBehaviour
 
         lineRenderer.positionCount = path.Count;
         lineRenderer.SetPositions(path.ToArray());
+        crntPath = path;
         startCircle.position = start;
         endCircle.position = end;
 
@@ -79,6 +80,8 @@ public class LevelBuilder : MonoBehaviour
 
         StartCoroutine(NextPath());
     }
+        public List<Vector3> crntPath;
+
 
     Vector3Int RandomElement(List<Vector3Int> list)
     {

@@ -7,3 +7,31 @@ Based off a package that I eventually got to work after importing their settings
     - somewhat random single color tilemap generator
     - start point and end point randomly generated, a path is displayed
     - over and over
+
+
+Ok so not it is modified to at least have another sprite from start move along the path in ticks 
+    - just teleport by moving along the path nodes after waitfor in the coroutine
+    - changed it from instantiating a new coroutien at the end of each one to making it a while loop so it doesn't use more mem each tile
+    - does make it harder to trigger new map when the new sprite gets to the end of the path - but do I want that anyways?
+
+Next Steps:
+    - more sprites on their own paths?
+    - make something that doesn't move it, but generates new path from its current location
+        - that will make it like a wander..
+    - make time advance or whatever only after a space bar press or input or something
+        - issue: how much do things move or whatever? Is it based on how many nodes away things are and some rounding? 
+        - so like someone can go 1,2,3 spaces, like that?
+        - i guess could litteraly just have that coroutien that moves the sprite just adanvce with space bar
+        - and it will advance as much as it has a speed stat? something like that?
+
+
+        - see notes in level builder for having decided how to do things
+        -BIG problem tho - need to be able to make the pathfinder NOT do diagonals...
+            - hrm...
+            http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html 
+                -answer is in there combined with changing somethign either in the AStar.cs file or maybe the graph .cs thing that it also uses or something else...
+                //OH HELL YEAH IT HAD SOME STUFF BUILT IN FOR THAT ALREADY
+                -- SET TO NO DIAGONAL FOR NOW
+                -- TO CHANGE BACK, in ASTAR.CS, CHANGE FourDirectionGraph back to Movegraph. See Graph.cs to see a lil description - actually does show that Fourdirection is what I want
+                    -- and Movegraph includes diagonals
+                    -- can i pass in multiple things of things etc to be able to populate with both if i want? maybe?

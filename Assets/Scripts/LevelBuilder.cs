@@ -120,7 +120,9 @@ public int crntIndex;
     //         yield return new WaitForSeconds(.05f);
     //     }
     // }
-
+    public Vector3 nextLoc;
+    public float distToNextNode;
+    public float denizonSpd = 1.5f; //will be set in denizon, just here to build.
     void Update()
     {
         if (Input.GetKeyDown("space"))
@@ -131,12 +133,20 @@ public int crntIndex;
 
             if (crntIndex + 1 < crntPath.Count)
             {
+                                nextLoc = crntPath[crntIndex+1];
+                print ("distnace to next way point it: " + (wanderer.transform.position - nextLoc) + " OR " + Vector3.Distance(wanderer.transform.position, nextLoc));
+                distToNextNode = Vector3.Distance(wanderer.transform.position, nextLoc);
                 crntIndex += 1;
                 // if (triggerNew == true)
                 // {
                 //     crntIndex = 0;
                 //     triggerNew = false;
                 // }
+
+
+                //ok this is where i would start to build my goofy 'check distance to next node' and diretion and whatever and move towards it, keep going to if you have some moves left and it was too close?
+                //get next node
+
             }
         }
     }

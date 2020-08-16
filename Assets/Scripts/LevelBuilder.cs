@@ -58,7 +58,6 @@ public class LevelBuilder : MonoBehaviour
         //StartCoroutine(TickMove());
     }
 
-
 //function to go through a path and insert nodes at all grid intersection points
 //or in the center of each grid tile that it goes through
 
@@ -83,9 +82,7 @@ public void InsertPathInters(Vector3 path)
 //1.4 movement speed, initial tick 1 move, next tick .4 + 1.4 = (1.8), one move, next tick is .8 + 1.4 = 2.2 so TWO MOVES (or spaces or grids or whatever), next one is .2 + 1.4 = 1.6 so one move ETC!!!
 //yeah i kind of like this, it lets you try to time things to lol i like it yeah lets do that...
 
-
 }
-
 
     public bool triggerNew = false;
 
@@ -143,7 +140,6 @@ public int crntIndex;
                 //     triggerNew = false;
                 // }
 
-
                 //ok this is where i would start to build my goofy 'check distance to next node' and diretion and whatever and move towards it, keep going to if you have some moves left and it was too close?
                 //get next node
 
@@ -156,7 +152,6 @@ public int crntIndex;
       //  triggerNew = true;
         crntIndex = 0;
         wanderer.transform.position = crntPath[crntIndex];
-
 
     }
 
@@ -200,9 +195,9 @@ public int crntIndex;
     }
         public List<Vector3> crntPath;
 
-
     Vector3Int RandomElement(List<Vector3Int> list)
     {
         return list[Random.Range(0, list.Count)];
     }
 }
+

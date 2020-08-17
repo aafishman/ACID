@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &133620439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133620441}
+  - component: {fileID: 133620440}
+  m_Layer: 0
+  m_Name: Highlighter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &133620440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133620439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bdb00c845e694459488781f01b348d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightTile: {fileID: 0}
+  tilemap: {fileID: 0}
+--- !u!4 &133620441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133620439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.957517, y: 7.9772115, z: -0.26219743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &236383071
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -740,6 +785,9 @@ MonoBehaviour:
   triggerNew: 0
   wanderer: {fileID: 2001570839}
   crntIndex: 0
+  nextLoc: {x: 0, y: 0, z: 0}
+  distToNextNode: 0
+  denizonSpd: 1.5
   crntPath:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -754,6 +802,7 @@ GameObject:
   - component: {fileID: 2001570841}
   - component: {fileID: 2001570840}
   - component: {fileID: 2001570842}
+  - component: {fileID: 2001570843}
   m_Layer: 0
   m_Name: Wand
   m_TagString: Untagged
@@ -838,6 +887,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ccbd893cfa8814c81472b82b7c84a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mvSpd: 1.5
+--- !u!114 &2001570843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001570839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fc13b496819aa47927fde8c2c6c1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightTile: {fileID: 11400000, guid: 0d0d07160b10d44b1b9ebcc3c8426cec, type: 2}
+  highlightMap: {fileID: 1689425829}
 --- !u!1 &2030358985
 GameObject:
   m_ObjectHideFlags: 0

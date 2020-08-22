@@ -23,6 +23,7 @@ public class LevelBuilder : MonoBehaviour
     List<Vector3Int> wallTiles;
     List<Vector3Int> groundTiles;
 
+    //TODO Implement     public bool waitForWanderer = true; in LevelBuilder
     public bool waitForWanderer = true;
     //feature flag above to switch it to not regenerating the map unless the wandere has made it to the end
     //will split off into its own thing for a person moving testing etc.
@@ -120,6 +121,7 @@ public int crntIndex;
     public Vector3 nextLoc;
     public float distToNextNode;
     public float denizonSpd = 1.5f; //will be set in denizon, just here to build.
+    public List<Vector3> pathNow;
     void Update()
     {
         if (Input.GetKeyDown("space"))
@@ -127,6 +129,7 @@ public int crntIndex;
             wanderer.transform.position = crntPath[crntIndex];
             // print("wanderer.transform.position is: " + wanderer.transform.position);
             // print(crntPath.Count);
+            GetPathNow();
 
             if (crntIndex + 1 < crntPath.Count)
             {
@@ -152,6 +155,13 @@ public int crntIndex;
       //  triggerNew = true;
         crntIndex = 0;
         wanderer.transform.position = crntPath[crntIndex];
+
+    }
+        public void GetPathNow()
+    {
+      // startPos = startCircle.position;
+      // endPos = endCircle.position;
+        pathNow = AStar.FindPath(tilemap, startCircle.position, endCircle.position); //? why isn't this working at all.... tilemap all normal and stuff?
 
     }
 

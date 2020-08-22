@@ -106,6 +106,9 @@ namespace Toolbox
             }
 
             return closest;
+            //maybe this is the individual tile?
+            //or this converted to worldgrid or something? maybe this is just relative?
+            //nah theres a few places like this one..
         }
 
         /// <summary>
@@ -167,6 +170,7 @@ namespace Toolbox
                         float priority = newCost + heuristic(next, goal);
                         open.Enqueue(next, priority);
                         cameFrom[next] = current;
+                        //something in here might work too to find individual tiles...
                     }
                 }
             }

@@ -60,7 +60,7 @@ namespace Toolbox
             return AStar.FindPath(new FourDirectionGraph(map), start, goal, Vector3Int.Distance);
         }
 
-        static HashSet<Vector3Int> OpenCells(Tilemap map, Vector3Int start, Vector3Int goal)
+        public static HashSet<Vector3Int> OpenCells(Tilemap map, Vector3Int start, Vector3Int goal)
         {
             Dictionary<Vector3Int, int> counts = new Dictionary<Vector3Int, int>();
             counts.Add(goal, 0);
@@ -78,7 +78,7 @@ namespace Toolbox
 
                 if ((map.IsCellEmpty(next) || next == start) && dist <= minDist)
                 {
-                    minDist = dist;
+                    minDist = dist; 
                     minCount = count;
                     openCells.Add(next);
                 }
@@ -87,9 +87,9 @@ namespace Toolbox
             });
 
             return openCells;
-        }
+        } 
 
-        static Vector3Int ClosestCell(HashSet<Vector3Int> openCells, Vector3Int start, Vector3Int goal)
+        public static Vector3Int ClosestCell(HashSet<Vector3Int> openCells, Vector3Int start, Vector3Int goal)
         {
             Vector3Int closest = goal;
             float minDist = Mathf.Infinity;

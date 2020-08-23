@@ -106,26 +106,24 @@ public class MovementController : MonoBehaviour
         if (movementInput.x < 0)
         {
             direction = new Vector3(-(gridX), 0f);//(-1f,0f);
-            if (!Physics2D.OverlapCircle(transform.position + direction, 0.2f, obstacleMask)) transform.position += direction;
         }
 
         if (movementInput.x > 0)
         {
             direction = new Vector3(gridX, 0f);//(1f,0f);
-            if (!Physics2D.OverlapCircle(transform.position + direction, 0.2f, obstacleMask)) transform.position += direction;
         }
         if (movementInput.y < 0)
         {
             direction = new Vector3(0f, -(gridY));//(0f,-1.5f); //should set these programatically (get cell size)
-            if (!Physics2D.OverlapCircle(transform.position + direction, 0.2f, obstacleMask)) transform.position += direction;
         }
         if (movementInput.y > 0)
         {
             direction = new Vector3(0f, gridY);//(0f, 1.5f);
-            if (!Physics2D.OverlapCircle(transform.position + direction, 0.2f, obstacleMask)) transform.position += direction;
-
         }
-
+        if (!Physics2D.OverlapCircle(transform.position + direction, 0.2f, obstacleMask))
+        {
+            transform.position += direction;
+        }
 
         UpdateFogOfWar();
     }

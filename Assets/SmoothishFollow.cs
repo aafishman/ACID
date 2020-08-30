@@ -32,13 +32,13 @@ public class SmoothishFollow : MonoBehaviour
 // 		}
 // 	}
 // }
-public PixelPerfectCamera pPC; 
-void NextPos()
-{
-    Vector2 newPosition = new Vector2(followTarget.transform.position.x, followTarget.transform.position.y);
-			float nextX = Mathf.Round(_pixelLockedPPU * newPosition.x);
-			float nextY = Mathf.Round(_pixelLockedPPU * newPosition.y);
-}
+// public PixelPerfectCamera pPC; 
+// void NextPos()
+// {
+//     Vector2 newPosition = new Vector2(followTarget.transform.position.x, followTarget.transform.position.y);
+// 			float nextX = Mathf.Round(_pixelLockedPPU * newPosition.x);
+// 			float nextY = Mathf.Round(_pixelLockedPPU * newPosition.y);
+// }
 
 	void LateUpdate () {
 		if (followTarget) {

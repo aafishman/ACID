@@ -67,7 +67,7 @@ public class SitPatherDemo : MonoBehaviour
 
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int coordinate = grid.WorldToCell(mouseWorldPos);
-            Debug.Log(coordinate); //this does seem to constantly poll and pull up a grid tile.... now just to highlight it or something?
+//            Debug.Log(coordinate); //this does seem to constantly poll and pull up a grid tile.... now just to highlight it or something?
             //grid.BroadcastMessage
 
 
